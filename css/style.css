@@ -37,6 +37,11 @@ body {
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
+#top img {
+
+  width: 100%;
+}
+
 /* Carousel base class */
 .carousel {
   height: 600px;
