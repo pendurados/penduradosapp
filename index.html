@@ -59,8 +59,9 @@
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       };
+        var options = {'title':'How Much Pizza I Ate Last Night'};
+
+        options.chartArea = {left:0, 'width': '100%', 'height': '100%'};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -299,18 +300,12 @@
   <script type="text/javascript">
 
   $( document ).ready(function() {
-    function resizeChart () {
-        chart.draw(data, options);
-    }
-    if (document.addEventListener) {
-        window.addEventListener('resize', resizeChart);
-    }
-    else if (document.attachEvent) {
-        window.attachEvent('onresize', resizeChart);
-    }
-    else {
-        window.resize = resizeChart;
-    }
+    //create trigger to resizeEnd event
+    $(window).resize(function() {
+        drawChart();
+    });
+
+
   });
 
   </script>
